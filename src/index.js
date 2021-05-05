@@ -7,7 +7,7 @@ import { Theme } from '@twilio-paste/core/theme';
 import Application from './components/Application';
 import { store } from './store';
 
-import './index.scss';
+import './index.css';
 
 ReactDOM.render(
   <Provider store={store}>
