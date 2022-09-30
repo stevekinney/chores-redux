@@ -3,6 +3,7 @@ import { Input } from '@twilio-paste/input';
 import { Label } from '@twilio-paste/label';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { humanSlice } from '../store/humanSlice';
 
 export const CreateHuman = () => {
   const [name, setName] = useState('');
@@ -13,7 +14,7 @@ export const CreateHuman = () => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          dispatch({ type: 'IMPLEMENT_ME' });
+          dispatch(humanSlice.actions.add(name));
           setName('');
         }}
       >

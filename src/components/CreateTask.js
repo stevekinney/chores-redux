@@ -3,6 +3,7 @@ import { Input } from '@twilio-paste/input';
 import { Label } from '@twilio-paste/label';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { tasksSlice } from '../store/taskSlice';
 
 export const CreateTask = () => {
   const [title, setTitle] = useState('');
@@ -13,7 +14,7 @@ export const CreateTask = () => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          dispatch({ type: 'IMPLEMENT_ME' });
+          dispatch(tasksSlice.actions.add(title));
           setTitle('');
         }}
       >
